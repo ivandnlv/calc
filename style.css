@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: 'Helvetica';
+}
+
+.calc {
+    margin: 10px auto 0 auto;
+    width: 300px;
+    height: 490px;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+    font-size: 72px;
+}
+
+.calc__out {
+    position: relative;
+    text-align: right;
+    padding-top: 50px;
+    padding-right: 33px;
+    width: 100%;
+    height: 100px;
+}
+
+.calc__out::before {
+    content: '';
+    display: none;
+    width: 5px;
+    height: 65px;
+    background: rgb(0, 123, 247);
+    top: 55px;
+    right: 21px;
+    position: absolute; 
+}
+
+.calc__out.animated::before {
+    display: block;
+    animation: animated 0.8s infinite;
+}
+
+.calc__panel {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(5, 60px);
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: 83%;
+    margin-top: 46px;
+    border-radius: 10px;
+    background: rgb(30, 30, 33);
+}
+
+.calc__action.total {
+    color: #fff;
+    background: rgb(0, 162, 255);
+    height: 140px;
+    grid-column: 4;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    border-radius: 50px;
+}
+
+.calc__action.plus {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+.calc__action.minus {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.calc__action.total:hover {
+    background: rgb(0, 200, 255);
+}
+
+button.calc__action, button.calc__num {
+    font-size: 36px;
+    color: rgb(0, 123, 247);
+    border: none;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 10px;
+    background: rgb(66, 66, 73);
+    box-shadow: 0 0 10px rgba(0, 0, 0,.5);
+    transition: background 0.2s;
+}
+
+.calc button:hover {
+    background: rgb(77, 77, 84);
+}
+
+button.calc__num {
+    color: #fff;
+}
+
+
+@keyframes animated {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
